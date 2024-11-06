@@ -1,0 +1,39 @@
+name: 'Setup Bluish'
+description: "Set up a specific version of Bluish and add the command-line tools to the PATH."
+author: "Luis Medel (@luismedel)"
+
+inputs:
+  bluish-version:
+    description: "Exact version of Bluish to use. Reads from .bluish-version if unset."
+    default: ""
+  bluish-version-file:
+    description: "File containing the Bluish version to use. Example: .bluish-version"
+
+outputs:
+  bluish-version:
+    description: "The installed Bluish version."
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install Bluish
+      shell: bash
+      run: |
+        if [ -z "$BLUISH_VERSION" ] && [ -f "$BLUISH_VERSION_FILE" ]
+        then
+            BLUISH_VERSION=$(cat "$BLUISH_VERSION_FILE")
+        fi
+
+        if [ -z "$BLUISH_VERSION" ]
+        then
+          pip install bluish
+        else
+          pip install bluish==$BLUISH_VERSION
+        fi
+      env:
+        BLUISH_VERSION: ${{ inputs.bluish-version }}
+        BLUISH_VERSION_FILE: ${{ inputs.bluish-version-file }}
+
+branding:
+  icon: 'code'
+  color: 'yellow'
