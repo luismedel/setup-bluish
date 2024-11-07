@@ -30,6 +30,8 @@ runs:
         else
           pip install bluish==$BLUISH_VERSION
         fi
+
+        bluish --version
       env:
         BLUISH_VERSION: ${{ inputs.bluish-version }}
         BLUISH_VERSION_FILE: ${{ inputs.bluish-version-file }}
