@@ -18,7 +18,8 @@ jobs:
           python-version: '>=3.11'
 
       - uses: luismedel/setup-bluish@v0
+        id: bluish
 
       - name: Check installation
         run: |
-          bluish --version
+          echo "Installed Bluish version: ${{ steps.bluish.outputs.bluish-version }}"
