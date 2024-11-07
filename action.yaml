@@ -36,10 +36,10 @@ runs:
       env:
         BLUISH_VERSION: ${{ inputs.bluish-version }}
         BLUISH_VERSION_FILE: ${{ inputs.bluish-version-file }}
+
     - name: Installed version
       run: |
         CMD_VERSION="$(bluish --version)"
-        CMD_VERSION=$(echo "$CMD_VERSION" | sed 's/bluish, version //g')
         echo "bluish-version=$CMD_VERSION" >> $GITHUB_OUTPUT
       shell: bash
 
