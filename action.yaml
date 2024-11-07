@@ -38,6 +38,7 @@ runs:
         BLUISH_VERSION_FILE: ${{ inputs.bluish-version-file }}
 
     - name: Installed version
+      id: installed-version
       run: |
         CMD_VERSION="$(bluish --version)"
         echo "bluish-version=$CMD_VERSION" >> $GITHUB_OUTPUT
