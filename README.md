@@ -1,8 +1,8 @@
-# setup-python
+# setup-bluish
 
 This action installs a version of Bluish making it available in the PATH.
 
-## Basic usage
+## Usage
 
 See [action.yml](https://github.com/luismedel/setup-bluish/blob/master/action.yml)
 
