@@ -12,7 +12,7 @@ steps:
 - uses: actions/setup-python@v5
   with:
     python-version: '>=3.11' 
-- uses: actions/setup-bluish@v1
+- uses: actions/setup-bluish@v2
 - run: bluish --version
 ```
 
