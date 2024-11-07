@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: '>=3.11'
 
-      - uses: luismedel/setup-bluish@6be88add4f15d61d27aa99c177f46285ae13cf43
+      - uses: luismedel/setup-bluish@4ac36443a8cc4f1ef11cc3c9df2342e0b89abfcb
         id: bluish
 
       - name: Check installation
