@@ -13,6 +13,11 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - uses: setup-python
+      id: python
+      with:
+        python-version: '>= 3.11'
+
     - name: Install Bluish
       shell: bash
       run: |
@@ -23,13 +28,14 @@ runs:
 
         if [ -z "$BLUISH_VERSION" ]
         then
-          pip install bluish
+          "$PYTHON_PATH" -m pip install bluish
         else
-          pip install bluish==$BLUISH_VERSION
+          "$PYTHON_PATH" -m pip install bluish==$BLUISH_VERSION
         fi
 
         bluish --version
       env:
+        PYTHON_PATH: ${{ steps.python.outputs.python-path }}
         BLUISH_VERSION: ${{ inputs.bluish-version }}
         BLUISH_VERSION_FILE: ${{ inputs.bluish-version-file }}
 
