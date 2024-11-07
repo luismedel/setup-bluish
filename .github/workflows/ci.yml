@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: luismedel/setup-bluish@374ea72522537aa56008cd40559836b4a3d3d19b
+      - uses: luismedel/setup-bluish@c435b083186c19de3df24e485cf1311a83ad3c24
       - name: Check installation
         run: |
           bluish --version
