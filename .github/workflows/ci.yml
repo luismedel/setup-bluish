@@ -12,13 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '>=3.11'
-
-      - uses: luismedel/setup-bluish@v2
-
+      - uses: luismedel/setup-bluish@374ea72522537aa56008cd40559836b4a3d3d19b
       - name: Check installation
         run: |
           bluish --version
