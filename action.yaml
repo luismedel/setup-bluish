@@ -33,10 +33,10 @@ runs:
       env:
         BLUISH_VERSION: ${{ inputs.bluish-version }}
         BLUISH_VERSION_FILE: ${{ inputs.bluish-version-file }}
-    - name: Fetch the installed version
-      shell: bash
+    - name: Installed version
       run: |
-        echo "bluish-version=$(bluish --version)\n" >> $GITHUB_OUTPUT
+        echo "bluish-version=$(bluish --version)" >> $GITHUB_OUTPUT
+      shell: bash
 
 branding:
   icon: 'code'
