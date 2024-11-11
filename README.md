@@ -9,7 +9,7 @@ See [action.yml](https://github.com/luismedel/setup-bluish/blob/master/action.ym
 ```yaml
 steps:
 - uses: actions/checkout@v4
-- uses: actions/setup-bluish@v3
+- uses: luismedel/setup-bluish@v3
 - run: |
     bluish --version
 ```
