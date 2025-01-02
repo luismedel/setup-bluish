@@ -16,7 +16,7 @@ runs:
     - uses: actions/setup-python@v5
       id: python
       with:
-        python-version: '== 3.10'
+        python-version: '3.10'
 
     - name: Install Bluish
       shell: bash
