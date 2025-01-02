@@ -4,7 +4,7 @@ This action installs a version of [Bluish](https://github.com/luismedel/bluish) 
 
 ## Usage
 
-See [action.yml](https://github.com/luismedel/setup-bluish/blob/master/action.yml)
+See [action.yml](https://github.com/luismedel/setup-bluish/blob/master/action.yaml)
 
 ```yaml
 steps:
